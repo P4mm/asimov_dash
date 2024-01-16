@@ -5,10 +5,10 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 # Use caminhos relativos para os arquivos no ambiente virtual
-df_reviews = pd.read_csv(r"C:\Users\User\Desktop\asimov_dash\customer_reviews.csv")
+df_reviews = pd.read_csv("/workspaces/asimov_dash/customer_reviews.csv")
 
 # Forneça o caminho absoluto para o arquivo com espaços
-df_top100_books = pd.read_csv(r"C:\Users\User\Desktop\asimov_dash\Top-100 Trending Books.csv")
+df_top100_books = pd.read_csv("/workspaces/asimov_dash/Top-100 Trending Books.csv")
 
 price_max = float(df_top100_books["book price"].max())
 price_min = float(df_top100_books["book price"].min())
@@ -37,7 +37,7 @@ st.write("Informações do Top 100:")
 st.dataframe(df_books.style.set_table_styles([{'selector': 'table', 'props': [('max-width', f'{fig_width}px')]}]))
 
 # Adicionar localhost para visualizar no navegador
-st.balloons()
+#st.balloons()
 
 # Adicionar os gráficos lado a lado
 col1, col2 = st.columns(2)
